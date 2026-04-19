@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
 
 const teamSchema = new mongoose.Schema(
   {
@@ -13,6 +12,7 @@ const teamSchema = new mongoose.Schema(
     owner_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Owner",
+      required: [true, "Owner is required"],
     },
   },
   { timestamps: true },
